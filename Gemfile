@@ -10,6 +10,13 @@ gem 'pg', '0.15.1'
 #using devise 3.3.0 for user mgt
 gem 'devise', '3.3.0'
 
+# using cancan for user roles
+gem 'cancan', '1.6.10'
+
+# adding strong_parameters gem ...
+# or not, as it were
+#gem 'strong_parameters', '0.1.4'
+
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
 end
