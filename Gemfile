@@ -7,6 +7,9 @@ gem 'rails', '4.0.8'
 #using pg as the DBMS
 gem 'pg', '0.15.1'
 
+#using devise 3.3.0 for user mgt
+gem 'devise', '3.3.0'
+
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
 end

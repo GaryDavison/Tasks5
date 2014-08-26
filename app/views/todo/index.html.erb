@@ -1,0 +1,18 @@
+#  [Index.html.erb]
+<h1>Todo List</h1>
+<h2>Outstanding Items</h2>
+<% @todos.each do |t| %>
+	<p>
+	<strong><%= t.name %></strong>
+	<small> <%= link_to “Mark as done”, todo_path(t), :method => :put %></small>
+	</p>
+<% end %>
+<h2>Completed Items</h2>
+<% @todos.each do |t| %>
+	<p>
+	<strong><%= t.name %></strong>
+	<small> <%= link_to “Remove”, t, :confirm => “OK to remove?” :method => :delete%></small>
+	</p>
+<% end %>
+<p><%= link_to “Add an item to the list?”, new_todo_path %></p>
+
