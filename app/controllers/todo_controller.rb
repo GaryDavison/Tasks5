@@ -38,9 +38,17 @@ class TodoController < ApplicationController
 	end
 
 	def edit
+		@todo = Todo.find(params[:id])
+		render "edit"
 	end
 
 	def update
+		@todo = Todo.find(params[:id])
+		if @todo.update(todo_params)
+			redirect_to todo_index_path, :notice => "Your To Do item was updated!"
+		else
+			render :edit, :notice => "Your To Do item was not updated!"
+		end
 	end
 
 

@@ -1,0 +1,8 @@
+<h1>Exit existing item in list</h1>
+<%= form_for @todo, url: todo_path(@todo), method: :patch do |f| %>
+	<%= f.label :name %>: <%= f.text_field :name %>
+	<%= f.label :completed %>: <%= f.check_box :completed %>
+	<p></p>
+	<%= f.submit "Add to To Do List" %>
+<% end %>
+

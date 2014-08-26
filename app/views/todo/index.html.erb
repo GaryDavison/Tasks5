@@ -5,6 +5,7 @@
 	<strong><%= t.name %></strong>
 	<small> <%= link_to "Mark as done", complete_todo_path(t), :method => :put %></small>
 	<small> <%= link_to "Show Detail", todo_path(t), :method => :get %></small>
+	<small> <%= link_to "Edit", edit_todo_path(t), :method => :get %></small>
 	</p>
 <% end %>
 <h2>Completed Items</h2>
