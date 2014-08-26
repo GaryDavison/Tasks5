@@ -2,7 +2,7 @@ class TodoController < ApplicationController
 
 	def index
 		@todos = Todo.where(completed: false)
-		@todones = Todo.where(completed: true)
+		@completes = Todo.where(completed: true)
 	end
 
 	def new
@@ -23,14 +23,26 @@ class TodoController < ApplicationController
 		end
 	end
 
-	def update
+	def complete
 		@todo = Todo.find(params[:id])
-		if @todo.update_attribute(:completed, true)
+		if @todo.update_column(:completed, true)
 			redirect_to todo_index_path, :notice => "Your To Do item was marked as done!"
 		else
 			redirect_to todo_index_path, :notice => "Your To Do item was unable to be marked as done!"
 		end
 	end
+
+	def show
+		@todo = Todo.find(params[:id])
+		render "show"
+	end
+
+	def edit
+	end
+
+	def update
+	end
+
 
 	def destroy
 		@todo = Todo.find(params[:id])
